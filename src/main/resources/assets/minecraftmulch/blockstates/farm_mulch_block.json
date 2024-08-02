@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "minecraftmulch:block/farm_mulch_block"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "minecraftmulch:block/farm_mulch_block"
+  }
+}

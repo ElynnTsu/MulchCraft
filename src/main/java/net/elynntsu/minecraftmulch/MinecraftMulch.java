@@ -1,6 +1,7 @@
 package net.elynntsu.minecraftmulch;
 
 import com.mojang.logging.LogUtils;
+import net.elynntsu.minecraftmulch.block.ModBlocks;
 import net.elynntsu.minecraftmulch.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -27,6 +28,7 @@ public class MinecraftMulch {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -46,6 +48,9 @@ public class MinecraftMulch {
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.TREEBARK);
+        }
+        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(ModBlocks.FARM_MULCH_BLOCK);
         }
     }
 
